@@ -1,4 +1,7 @@
-function loadPokemons() {
+
+import { loadPokemon } from "./loadPoke.js";
+
+function loadAllPokemons() {
   const pokeLink = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=898';
 
   fetch(pokeLink)
@@ -17,24 +20,19 @@ function createList(datas) {
     let pokemonUrl = data.url;
     let pokemonId = pokemonUrl.split('/');
     const element_img = document.createElement('img');
-    const element_div2 = document.createElement('div');
+    const element_button = document.createElement('button');
     const element_p = document.createElement('p');
-    element_div2.classList.add('pokemon', 'max_wi');
-    element_div2.setAttribute('onclick', 'loadPokemon(' + pokemonId[6] + ')');
-    element_div2.append(element_img);
+    element_button.classList.add('pokemon', 'max_wi');
+    element_button.addEventListener('click', loadPokemon(pokemonId[6]));
+    element_button.append(element_img);
 
     element_img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId[6]}.png`;
 
-    let stringBuilder =
-      '(' +
-      pokemonId[6] +
-      ') ' +
-      data.name.charAt(0).toUpperCase() +
-      data.name.slice(1);
+    let stringBuilder = '(' +pokemonId[6] +') ' + data.name.charAt(0).toUpperCase() + data.name.slice(1);
     element_p.textContent = stringBuilder;
-    element_div2.append(element_p);
-    element_div.append(element_div2);
+    element_button.append(element_p);
+    element_div.append(element_button);
   });
 }
 
-export { loadPokemons };
+export { loadAllPokemons };

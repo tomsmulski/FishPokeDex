@@ -1,5 +1,5 @@
 function loadPokemon(pokeID) {
-  const ele_div = document.createElement('div');
+  //const ele_div = document.createElement('div');
 
   const pokeUrl = `https://pokeapi.co/api/v2/pokemon/${pokeID}/`;
 
@@ -23,3 +23,6 @@ function createInfoPage(data) {
   //alert(pokeName + "\n" + pokeWeight + "\n" + pokeHeight + "\n" + pokeTypes[1].type.name);
   alert(pokeName + '\n' + pokeWeight + '\n' + pokeHeight + '\n' + pkttypes);
 }
+
+
+export {loadPokemon}
