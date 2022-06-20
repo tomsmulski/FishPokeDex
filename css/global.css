@@ -6,3 +6,31 @@ body {
   font-family: sans-serif;
   margin: 0;
 }
+
+.li_no_deco {
+  list-style: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.max_wi {
+  max-width: 50%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: burlywood;
+}
+
+.pokemon {
+  border: 1px solid black;
+  width: 45vw;
+  text-align: center;
+  background-color: cornflowerblue;
+  margin-top: 5px;
+  border-radius: 15%;
+}
