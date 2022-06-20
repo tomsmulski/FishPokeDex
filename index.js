@@ -1,1 +1,3 @@
-console.log('hello world!');
+import { loadPokemons } from './modules/loadPokemon.js';
+
+loadPokemons();
