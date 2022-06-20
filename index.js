@@ -1,3 +1,3 @@
-import { loadPokemons } from './modules/loadPokemon.js';
+import { loadAllPokemons } from './modules/loadAllPokemon.js';
 
-loadPokemons();
+loadAllPokemons();
